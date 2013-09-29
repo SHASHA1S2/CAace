@@ -4,20 +4,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Register Page</title>
+<title>CAace</title>
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
 <script src="jquery.validate.js"></script>
-<script src="validate.js"></script>
 </head>
  
 <body>
  
-<div data-role="page">
+<div data-role="dialog">
  
 <div data-role="header">
-<a href="index.html" data-transition="fade">Sign In</a>
+<a href="sign.html" data-rel="dialog">Sign In</a>
 <h1>Register Page</h1>
 </div>
  
@@ -52,7 +51,34 @@
 <input type="text" name="dob" id="dob" placeholder="Date of Birth">
 </fieldset>
  
-<input type="submit" value="Register">
+<input type="submit" value="Register" onclick="valid();">
+<script>
+function valid() {
+$("#reg").validate({
+    rules:{
+		username:{
+			required:true,
+			minlength:4
+		},
+		password:{
+			required:true,
+			minlength:6
+		},
+		password2:{
+			required:true,
+			minlength:6,
+			equalTo:"#password"
+		},
+		email:"required",
+		gender:"required",
+		dob:{
+			required:true,
+			date:true
+		}
+	}
+});
+}
+</script>
  
 </form>
  

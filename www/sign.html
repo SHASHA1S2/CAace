@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAace</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+<script src="jquery.validate.js"></script>
+</head>
+ 
+<body>
+ 
+<div data-role="dialog">
+ 
+<div data-role="header">
+<a href="register.html" data-rel="dialog">Register</a>
+<h1>Sign In</h1>
+</div>
+ 
+<div data-role="content">
+ 
+<form action="dashboard.html" method="post" id="sign" name="sign">
+ 
+<fieldset data-role="fieldcontain">
+<input type="text" name="username" id="username" placeholder="Username">
+</fieldset>
+ 
+<fieldset data-role="fieldcontain">
+<input type="password" name="password" id="password" placeholder="Password">
+</fieldset>
+ 
+<input type="submit" value="Sign In" onclick="valid();">
+<script>
+function valid(){
+$("#sign").validate({
+	rules:{
+		username:{
+			required:true,
+			minlength:4
+		},
+		password:{
+			required:true,
+			minlength:6
+		}
+	}
+});
+}
+</script>
+ 
+</form>
+ 
+</div>
+</div>
+ 
+</body>
+</html>
