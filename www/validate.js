@@ -1,0 +1,25 @@
+$().ready(function() {
+$("#reg").validate({
+    rules:{
+		username:{
+			required:true,
+			minlength:4
+		},
+		password:{
+			required:true,
+			minlength:6
+		},
+		password2:{
+			required:true,
+			minlength:6,
+			equalTo:"#password"
+		},
+		email:"required",
+		gender:"required",
+		dob:{
+			required:true,
+			date:true
+		}
+	}
+});
+});
